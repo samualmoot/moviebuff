@@ -72,7 +72,7 @@ app.post('/reviews', (req, res) => { // Testing needed -- edge case and destruct
 app.post('/users', (req, res) => { 
   const { displayName, email } = req.body.user; // pull username and email from body sent from frontend
   storeUser(displayName, email) // store user info into database
-    .then(() => res.send(201)) // respond with a good status
+    .then(() => res.sendStatus(201)) // respond with a good status
     .catch(error => {
       console.error(error);
       res.sendStatus(500);
